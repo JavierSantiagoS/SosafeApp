@@ -1,7 +1,9 @@
 package com.javierestudio.appsosafe.mapModule.model
 
 import com.google.android.gms.maps.model.LatLng
+import com.javierestudio.appsosafe.MapApplication
 import com.javierestudio.appsosafe.common.database.APIService
+import com.javierestudio.appsosafe.common.entities.PlaceEntity
 import com.javierestudio.appsosafe.common.responses.nearbyPlaceResponses.PoisResponse
 import com.javierestudio.appsosafe.common.utils.Constants
 import com.javierestudio.appsosafe.common.utils.DataException
@@ -33,5 +35,9 @@ class MapInteractor {
                 else -> throw DataException(TypeError.UNKNOWN_ERROR)
             }
         }
+
+    suspend fun getPlaceByName(name: String): PlaceEntity? = MapApplication.database.placeDao().
+        getPlaceByName(name)
+
 
 }

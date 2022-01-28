@@ -29,7 +29,7 @@ class FavoriteFragment : Fragment(), HomeAux, OnClickListener {
 
     private lateinit var mContext : Context
 
-    val reviewsList = arrayListOf<ReviewsEntity>()
+    private val reviewsList = arrayListOf<ReviewsEntity>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -94,19 +94,19 @@ class FavoriteFragment : Fragment(), HomeAux, OnClickListener {
 
         val bundle = Bundle()
         with(bundle) {
-            putLong("POI_ID", entity.idIntern)
+            putLong(Constants.POI_ID, entity.idIntern)
             putDouble(Constants.POI_LAT, entity.coordinates.latitude)
             putDouble(Constants.POI_LNG, entity.coordinates.longitude)
             putString(Constants.POI_NAME, entity.name)
             putString(Constants.POI_VICINITY, entity.vicinity)
             putDouble(Constants.POI_RATING, entity.rating)
-            putBoolean("POI_IS_FAV", entity.isFavorite)
+            putBoolean(Constants.POI_IS_FAV, entity.isFavorite)
             putString(Constants.POI_PHOTO, entity.photoPlace)
             reviewsList.clear()
             for (reviews in entity.reviews) {
                 reviewsList.add(reviews)
             }
-            putParcelableArrayList("POI_REVIEWS", reviewsList)
+            putParcelableArrayList(Constants.POI_REVIEWS, reviewsList)
         }
 
         mBinding.recyclerView.visibility = View.GONE

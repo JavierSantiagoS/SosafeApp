@@ -24,6 +24,8 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
 import com.javierestudio.appsosafe.R
+import com.javierestudio.appsosafe.common.entities.PlaceEntity
+import com.javierestudio.appsosafe.common.entities.ReviewsEntity
 import com.javierestudio.appsosafe.common.responses.nearbyPlaceResponses.PoisResponse
 import com.javierestudio.appsosafe.common.responses.nearbyPlaceResponses.ResultResponse
 import com.javierestudio.appsosafe.common.utils.Constants
@@ -38,6 +40,8 @@ import kotlin.collections.HashMap
 class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener,
     android.widget.SearchView.OnQueryTextListener, GoogleMap.OnMarkerClickListener{
 
+    private var marker: Marker? = null
+
     private lateinit var mBinding: FragmentMapBinding
     private lateinit var mMapViewModel: MapViewModel
     private lateinit var mContext : Context
@@ -46,6 +50,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMyLocationButton
     private var mMyLocation: LatLng? = null
 
     private var hashMap: HashMap<Marker, ResultResponse> = HashMap()
+    private val reviewsList = arrayListOf<ReviewsEntity>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -82,6 +87,17 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMyLocationButton
             Snackbar.make(mBinding.root, msgRes, Snackbar.LENGTH_SHORT)
 
         })
+
+        mMapViewModel.getFavoritePlaceClicked().observe(viewLifecycleOwner){ placeEntity ->
+            if (placeEntity != null){
+                launchShowInfoFragment(placeEntity)
+            } else {
+                marker?.let {
+                    launchShowInfoFragment(it)
+                }
+            }
+
+        }
 
         mMapViewModel.isShowProggresBar().observe(viewLifecycleOwner,{ isVisible ->
             mBinding.progressBar.visibility = if(isVisible) View.VISIBLE else View.GONE
@@ -246,7 +262,8 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMyLocationButton
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {
-        launchShowInfoFragment(marker)
+        mMapViewModel.getPlaceByName(hashMap[marker]!!.name)
+        this.marker = marker
         return true
     }
 
@@ -276,6 +293,36 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMyLocationButton
 
         fragment.arguments = bundle
         fragmentTransaction.add(R.id.containerMainFragment, fragment, Constants.MAP_FRAGMENT)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+    }
+
+    private fun launchShowInfoFragment(entity: PlaceEntity) {
+        val fragment = ShowInfoFragment()
+        val fragmentManager = parentFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
+        val bundle = Bundle()
+        with(bundle) {
+            putLong(Constants.POI_ID, entity.idIntern)
+            putDouble(Constants.POI_LAT, entity.coordinates.latitude)
+            putDouble(Constants.POI_LNG, entity.coordinates.longitude)
+            putString(Constants.POI_NAME, entity.name)
+            putString(Constants.POI_VICINITY, entity.vicinity)
+            putDouble(Constants.POI_RATING, entity.rating)
+            putBoolean(Constants.POI_IS_FAV, entity.isFavorite)
+            putString(Constants.POI_PHOTO, entity.photoPlace)
+            for (reviews in entity.reviews) {
+                reviewsList.add(reviews)
+            }
+            putParcelableArrayList(Constants.POI_REVIEWS, reviewsList)
+        }
+
+        mBinding.map.visibility = View.GONE
+        mBinding.searchView.visibility = View.GONE
+
+        fragment.arguments = bundle
+        fragmentTransaction.add(R.id.containerMainFragment, fragment, Constants.FAV_FRAGMENT)
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }

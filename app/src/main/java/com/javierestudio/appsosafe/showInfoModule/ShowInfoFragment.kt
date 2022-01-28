@@ -238,8 +238,12 @@ class ShowInfoFragment() : Fragment(), OnMapReadyCallback {
                         requireActivity().findViewById<View>(R.id.map).visibility = View.VISIBLE
                         requireActivity().findViewById<View>(R.id.searchView).visibility =
                             View.VISIBLE
+                        requireActivity().findViewById<View>(R.id.recyclerView).visibility = View.VISIBLE
                     } else if(tag!! == Constants.FAV_FRAGMENT){
                         parentFragmentManager.popBackStack()
+                        requireActivity().findViewById<View>(R.id.map).visibility = View.VISIBLE
+                        requireActivity().findViewById<View>(R.id.searchView).visibility =
+                            View.VISIBLE
                         requireActivity().findViewById<View>(R.id.recyclerView).visibility = View.VISIBLE
                     }
                 }

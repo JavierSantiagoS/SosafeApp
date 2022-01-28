@@ -26,6 +26,7 @@ object Constants {
     const val SHOW = true
     const val HIDE = false
 
+    const val POI_ID = "POI_ID"
     const val POI_LAT = "POI_LAT"
     const val POI_LNG = "POI_LNG"
     const val POI_PLACE_ID = "POI_PLACE_ID"
@@ -33,6 +34,8 @@ object Constants {
     const val POI_VICINITY = "POI_VICINITY"
     const val POI_RATING = "POI_RATING"
     const val POI_PHOTO = "POI_PHOTO"
+    const val POI_IS_FAV = "POI_IS_FAV"
+    const val POI_REVIEWS = "POI_REVIEWS"
 
     const val TIME_OUT = 0
     const val CALL_SUCCES = 200
