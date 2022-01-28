@@ -11,7 +11,6 @@ import com.javierestudio.appsosafe.common.utils.Constants
 import com.javierestudio.appsosafe.common.utils.DataException
 import com.javierestudio.appsosafe.common.utils.TypeError
 import com.javierestudio.appsosafe.mapModule.model.MapInteractor
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class MapViewModel: ViewModel() {
@@ -55,10 +54,6 @@ class MapViewModel: ViewModel() {
         return placeEntity
     }
 
-    fun setFavoritePlaceClicked(favoritePlace: PlaceEntity){
-        placeEntity.value = favoritePlace
-    }
-
     fun getFavoritePlaceClicked(): LiveData<PlaceEntity> {
         return placeEntity
     }
@@ -67,9 +62,7 @@ class MapViewModel: ViewModel() {
         pois.value = poisList
     }
 
-    fun getPOIs(): LiveData<PoisResponse> {
-        return pois
-    }
+    fun getPOIs(): LiveData<PoisResponse>  = pois
 
     fun setTypeError(typeError: TypeError){
         this.typeError.value = typeError

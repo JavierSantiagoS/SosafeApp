@@ -1,7 +1,6 @@
 package com.javierestudio.appsosafe.common.database
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -22,6 +21,5 @@ interface PlaceDao {
 
     @Delete
     suspend fun deleteFavoritePlace(placeEntity: PlaceEntity): Int
-
 
 }

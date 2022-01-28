@@ -13,15 +13,9 @@ import com.javierestudio.appsosafe.databinding.ActivityHomeBinding
 import com.javierestudio.appsosafe.favoriteModule.FavoriteFragment
 import com.javierestudio.appsosafe.mapModule.MapFragment
 import com.javierestudio.appsosafe.optionsModule.OptionsFragment
-import com.javierestudio.appsosafe.showInfoModule.ShowInfoFragment
 
 
 class HomeActivity : AppCompatActivity() {
-
-    // TODO: 27/01/2022 ARREGLAR VALIDACIONES DE INTERNET CON LAS PETICIONES /AndroidRuntime: FATAL EXCEPTION: main
-    //    Process: com.javierestudio.appsosafe, PID: 10952
-    //    java.net.SocketTimeoutException: connect timed out
-    //        at java.net.PlainSocketImpl.socketConnect(Native Method) 
 
     private lateinit var mBinding: ActivityHomeBinding
 
@@ -35,10 +29,7 @@ class HomeActivity : AppCompatActivity() {
 
         //hideSystemUI()
         setupBottomNav()
-
     }
-
-
 
     // TODO: 26/01/2022 SI USO EL TECLADO CUANDO ESTOY EN FULLSCREENS SE AUMENTA SU HEIGTH con el método hideSystemUi para hacer fullscreen
     // TODO: 26/01/2022 SI PONGO EL SetOnApllyWIndow se arregla lo anterior  pero cuando saco el teclado se borra el bottom navbar
@@ -57,8 +48,6 @@ class HomeActivity : AppCompatActivity() {
         val mapFragment = MapFragment()
         val favoriteFragment = FavoriteFragment()
         val optionsFragment = OptionsFragment()
-
-        val showInfoFragment = ShowInfoFragment()
 
         mActiveFragment = mapFragment
 

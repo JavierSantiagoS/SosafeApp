@@ -57,9 +57,7 @@ class ShowInfoViewModel: ViewModel() {
         placesDetails.value = placeDetailsList
     }
 
-    fun getPlaceDetails(): LiveData<PlaceDetailsResponse> {
-        return placesDetails
-    }
+    fun getPlaceDetails(): LiveData<PlaceDetailsResponse> = placesDetails
 
     fun setShowProggresBar(isVisible : Boolean){
         this.isVisible.value = isVisible

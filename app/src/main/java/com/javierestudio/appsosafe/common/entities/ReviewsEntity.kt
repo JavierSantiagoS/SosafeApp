@@ -23,9 +23,7 @@ data class ReviewsEntity(
         parcel.readString()!!
     )
 
-    override fun describeContents(): Int {
-        return 0
-    }
+    override fun describeContents(): Int = 0
 
     override fun writeToParcel(parcel: Parcel?, flags: Int) {
         parcel!!.writeString(authorName)

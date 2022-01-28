@@ -80,7 +80,7 @@ class FavoriteFragment : Fragment(), HomeAux, OnClickListener {
 
 
     override fun goToTop() {
-        //mBinding.recyclerView.smoothScrollToPosition(0)
+        mBinding.recyclerView.smoothScrollToPosition(0)
     }
 
     override fun onClick(placeEntity: PlaceEntity) {

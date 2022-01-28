@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.javierestudio.appsosafe.R
 import com.javierestudio.appsosafe.common.entities.PlaceEntity
@@ -33,7 +32,7 @@ import com.javierestudio.appsosafe.showInfoModule.viewModel.ShowInfoViewModel
 import java.util.ArrayList
 
 
-class ShowInfoFragment() : Fragment(), OnMapReadyCallback {
+class ShowInfoFragment: Fragment(), OnMapReadyCallback {
 
     private lateinit var mAdapter : ShowInfoAdapter
     private lateinit var mLinearLayout: LinearLayoutManager

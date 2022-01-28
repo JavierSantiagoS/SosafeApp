@@ -14,7 +14,6 @@ import kotlinx.coroutines.withContext
 
 class MapInteractor {
 
-
     suspend fun getPOIs(query: String, coordinates: LatLng, response: (PoisResponse?) -> Unit) =
         withContext(Dispatchers.IO) {
             val url: String =
@@ -38,6 +37,5 @@ class MapInteractor {
 
     suspend fun getPlaceByName(name: String): PlaceEntity? = MapApplication.database.placeDao().
         getPlaceByName(name)
-
 
 }

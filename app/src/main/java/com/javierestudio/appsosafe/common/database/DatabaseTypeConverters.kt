@@ -5,7 +5,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.javierestudio.appsosafe.common.entities.ReviewsEntity
-import java.lang.reflect.Type
 
 
 class DatabaseTypeConverters {
@@ -21,8 +20,5 @@ class DatabaseTypeConverters {
 
     @TypeConverter
     fun toReviewList(string: String?): List<ReviewsEntity?> = Gson().fromJson(string, object : TypeToken<List<ReviewsEntity?>>(){}.type)
-
-
-
 
 }
