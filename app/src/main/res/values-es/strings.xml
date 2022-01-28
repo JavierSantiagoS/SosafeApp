@@ -1,35 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AppSOSAFE</string>
 
-    <string name="map_title">Map</string>
-    <string name="favorite_title">Favorite</string>
-    <string name="options_title">Options</string>
+    <string name="map_title">Mapa</string>
+    <string name="favorite_title">Favoritos</string>
+    <string name="options_title">Opciones</string>
 
-    <string name="frag_map_error_get_current_location">Error trying to get your current location, check if you have active location</string>
-    <string name="frag_map_fine_permission_denied_activate_manually">Permission denied, go to settings and activate it manually</string>
-    <string name="frag_map_msg_info_permission">For the correct functioning of the app you must activate the location permission</string>
-    <string name="frag_map_msg_warning_sv_submit">The text cannot be empty</string>
-    <string name="frag_map_msg_error_location_sv_submit">Localization error please check permissions</string>
-    <string name="frag_map_list_pois_empty">Data is empty</string>
-    <string name="frag_map_contentdescription_imgpoi">Site sample image</string>
+    <string name="frag_map_error_get_current_location">Error al tratar de obtener su localización actual, revise si tiene la localización activa</string>
+    <string name="frag_map_fine_permission_denied_activate_manually">Permiso rechazado, ir a ajustes y activarlo manual</string>
+    <string name="frag_map_msg_info_permission">Para el correcto funcionamiento de la app debes activar el permiso de localización</string>
+    <string name="frag_map_msg_warning_sv_submit">El texto no puede estar vacío</string>
+    <string name="frag_map_msg_error_location_sv_submit">Error con la localización por favor revisa los permisos</string>
+    <string name="frag_map_list_pois_empty">Los datos están vacíos</string>
+    <string name="frag_map_contentdescription_imgpoi">Imagen de muestra del sitio</string>
 
-    <string name="map_fragment_hint_searchview">Example: restaurant</string>
+    <string name="map_fragment_hint_searchview">Ejemplo: restaurant</string>
 
-    <string name="main_error_get">Error getting request data</string>
-    <string name="main_error_unkown">Unknown error</string>
+    <string name="main_error_get">Error al obtener los datos de la petición</string>
+    <string name="main_error_unkown">Error desconocido</string>
 
-    <string name="address_img">Address</string>
-    <string name="star_img">Place rating</string>
-    <string name="tv_show_info_savepoi">Save place as favourite?</string>
-    <string name="sw_save_text">Yes</string>
+    <string name="address_img">Dirección</string>
+    <string name="star_img">Puntuación del lugar</string>
+    <string name="tv_show_info_savepoi">¿Guardar lugar como favorito?</string>
+    <string name="sw_save_text">Sí</string>
     <string name="sw_not_save_text">No</string>
 
-    <string name="item_img_profile">Profile picture</string>
-    <string name="item_dont_have_reviews">There are no comments related to the location</string>
+    <string name="item_img_profile">Foto de perfil</string>
+    <string name="item_dont_have_reviews">No existen comentarios relacionados con la ubicación</string>
 
     <string name="example">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 
-    <string name="description_img_photo">Photo of the place</string>
-    <string name="frag_options_coming_soon">COMING SOON!</string>
-
+    <string name="description_img_photo">Foto del lugar</string>
+    <string name="frag_options_coming_soon">¡PRONTO!</string>
 </resources>
