@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
+    <dimen name="common_padding_middle">24dp</dimen>
+    <dimen name="margin_top_searchview_map">60dp</dimen>
+    <dimen name="map_show_info_height_size">220dp</dimen>
+    <dimen name="sw_thum_text_padding">6dp</dimen>
+    <dimen name="frag_show_info_sw_text_size">18sp</dimen>
+    <dimen name="frag_show_sw_text_padding">20dp</dimen>
+    <dimen name="frag_show_info_img_height_size">180dp</dimen>
+    <dimen name="item_review_text_name_size">17sp</dimen>
+    <dimen name="item_review_text_time_size">15sp</dimen>
+    <dimen name="item_review_width_textview_date">130dp</dimen>
+    <dimen name="margin_top_container_closer">4dp</dimen>
+    <dimen name="item_review_img_profile_photo_size">58dp</dimen>
+    <dimen name="item_card_heigth">200dp</dimen>
+</resources>

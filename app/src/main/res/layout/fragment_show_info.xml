@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".showInfoModule.ShowInfoFragment">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mapShowInfo"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/map_show_info_height_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clDataPoi"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#CD3939"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mapShowInfo">
+
+        <TextView
+            android:id="@+id/tvPoiName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding_default"
+            android:layout_marginTop="@dimen/common_padding_default"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="@integer/max_lenght_poiname_show_info"
+            android:maxLines="@integer/one_max_line"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Restaurante de mamá y postres de la abuela" />
+
+        <ImageView
+            android:id="@+id/imgAddres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:background="@drawable/ic_directions"
+            android:contentDescription="@string/address_img"
+            app:layout_constraintStart_toStartOf="@id/tvPoiName"
+            app:layout_constraintTop_toBottomOf="@id/tvPoiName" />
+
+        <TextView
+            android:id="@+id/tvPoiDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="@integer/max_lenght_poidirection_show_info"
+            android:maxLines="@integer/one_max_line"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/imgAddres"
+            app:layout_constraintStart_toEndOf="@id/imgAddres"
+            app:layout_constraintTop_toTopOf="@id/imgAddres"
+            tools:text="Calle 10# 11-27 Centro sfasfsa" />
+
+        <ImageView
+            android:id="@+id/imgStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/common_padding_min"
+            android:background="@drawable/ic_star_rate"
+            android:contentDescription="@string/star_img"
+            app:layout_constraintBottom_toBottomOf="@id/tvPoiRating"
+            app:layout_constraintEnd_toStartOf="@id/tvPoiRating"
+            app:layout_constraintTop_toTopOf="@id/tvPoiRating" />
+
+        <TextView
+            android:id="@+id/tvPoiRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/common_padding_default"
+            android:gravity="center"
+            android:maxLines="@integer/one_max_line"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvPoiDirection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPoiDirection"
+            tools:text="4.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:checked="false"
+        android:text="@string/tv_show_info_savepoi"
+        android:textOff="@string/sw_not_save_text"
+        android:textOn="@string/sw_save_text"
+        android:textSize="@dimen/frag_show_info_sw_text_size"
+        android:thumb="@drawable/squircle_thumb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clDataPoi"
+        app:showText="true"
+        app:switchPadding="@dimen/frag_show_sw_text_padding"
+        app:thumbTextPadding="@dimen/sw_thum_text_padding"
+        app:track="@drawable/squircle_track" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsPhotoOverview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/common_padding_min"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:scrollbarStyle="outsideInset"
+        android:overScrollMode="never"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swSave"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgPoi"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/frag_show_info_img_height_size"
+                android:background="@android:color/darker_gray"
+                android:contentDescription="@string/frag_map_contentdescription_imgpoi" />
+
+            <TextView
+                android:id="@+id/tvNoData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:text="@string/item_dont_have_reviews"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:isScrollContainer="true"
+                android:scrollbars="none"
+                tools:listitem="@layout/item_review"/>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBarShowInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@drawable/bg_progressbar"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
