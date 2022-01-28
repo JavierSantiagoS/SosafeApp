@@ -11,4 +11,9 @@
     <color name="text_color_text_review">#3B5774</color>
     <color name="color_divider">#353232</color>
     <color name="color_white_t">#CCFFFFFF</color>
+
+    <color name="primaryColor">#d32f2f</color>
+    <color name="primaryLightColor">#ff6659</color>
+    <color name="secondaryColor">#bcaaa4</color>
+    <color name="secondaryLightColor">#efdcd5</color>
 </resources>
